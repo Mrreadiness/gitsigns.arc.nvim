@@ -90,8 +90,7 @@ local git_command = async.create(function(args, spec)
   end
 
   if spec.json and stdout then
-    local json = require("json")
-    local status, stdout_json = pcall(json.decode, stdout)
+    local status, stdout_json = pcall(vim.json.decode, stdout)
     if status then
       return stdout_json, stderr
     end

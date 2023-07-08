@@ -16,7 +16,6 @@ description = {
 
 dependencies = {
   'lua == 5.1',
-  'https://github.com/rxi/json.lua',
 }
 
 source = {
