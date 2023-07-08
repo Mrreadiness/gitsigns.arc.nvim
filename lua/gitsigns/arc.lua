@@ -389,7 +389,7 @@ function Obj:file_info(file, silent)
     result.relpath = results[1]
   end
 
-  result.object_name = git_command({ file }, { command = 'sha1sum' })[1]
+  result.object_name = git_command({ '-a', '1', file }, { command = 'shasum' })[1]
   return result
 end
 
