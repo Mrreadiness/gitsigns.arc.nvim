@@ -1,17 +1,17 @@
 # gitsigns.nvim
 
-[![CI](https://github.com/lewis6991/gitsigns.nvim/workflows/CI/badge.svg?branch=main)](https://github.com/lewis6991/gitsigns.nvim/actions?query=workflow%3ACI)
-[![Version](https://img.shields.io/github/v/release/lewis6991/gitsigns.nvim)](https://github.com/lewis6991/gitsigns.nvim/releases)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Gitter](https://badges.gitter.im/gitsigns-nvim/community.svg)](https://gitter.im/gitsigns-nvim/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-
 Super fast git decorations implemented purely in Lua.
 
 ## Preview
 
 | Hunk Actions | Line Blame |
 | --- | ----------- |
-| <img src="https://raw.githubusercontent.com/lewis6991/media/main/gitsigns_actions.gif" width="450em"/> | <img src="https://raw.githubusercontent.com/lewis6991/media/main/gitsigns_blame.gif" width="450em"/> |
+| <img src="https://arcanum.yandex-team.ru/proxy/arcanum/api/v2/repos/arc/downloads?at=trunk&path=%2Fjunk%2Fa-matveev9%2Fgitsigns.arc.nvim%2Fdoc%2Fgitsigns_actions.gif" width="450em"/> | <img src="https://arcanum.yandex-team.ru/proxy/arcanum/api/v2/repos/arc/downloads?at=trunk&path=%2Fjunk%2Fa-matveev9%2Fgitsigns.arc.nvim%2Fdoc%2Fgitsigns_blame.gif" width="450em"/> |
+
+## Установка с [Lazy](https://github.com/folke/lazy.nvim)
+```lua
+  { dir = "/path/to/arcadia/junk/a-matveev9/gitsigns.arc.nvim"},
+```
 
 ## Features
 

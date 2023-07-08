@@ -69,7 +69,7 @@ function M.setup_git()
 
   M.git{'config', 'merge.conflictStyle', 'merge'}
 
-  M.git{'config', 'user.email', 'tester@com.com'}
+  M.git{'config', 'user.email', 'testercom.com'}
   M.git{'config', 'user.name' , 'tester'}
 
   M.git{'config', 'init.defaultBranch', 'master'}

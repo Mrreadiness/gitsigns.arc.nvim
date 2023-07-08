@@ -1,11 +1,6 @@
 *gitsigns.txt* Gitsigns
 *gitsigns.nvim*
 
-Author:   Lewis Russell <lewis6991@gmail.com>
-Version:  0.7-dev
-Homepage: <https://github.com/lewis6991/gitsigns.nvim>
-License:  MIT license
-
 ==============================================================================
 INTRODUCTION                                                        *gitsigns*
 

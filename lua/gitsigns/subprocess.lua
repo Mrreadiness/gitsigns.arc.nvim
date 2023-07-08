@@ -13,6 +13,7 @@ M.job_cnt = 0
 ---
 --- Used in git.lua
 --- @field suppress_stderr? boolean
+--- @field json? boolean
 
 --- @param ... uv_pipe_t
 local function try_close(...)

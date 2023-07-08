@@ -887,15 +887,17 @@ M.blame_line = void(function(opts)
   local blame_fmt = create_blame_fmt(is_committed, opts.full)
 
   if is_committed and opts.full then
-    result.body = bcache.git_obj:command({ 'show', '-s', '--format=%B', result.sha })
+    result.body = bcache.git_obj:get_commit_body(result.sha)
 
     local hunk
 
     hunk, result.hunk_no, result.num_hunks = get_blame_hunk(bcache.git_obj.repo, result)
 
-    result.hunk = Hunks.patch_lines(hunk, fileformat)
-    result.hunk_head = hunk.head
-    insert_hunk_hlmarks(blame_fmt, hunk)
+    if hunk then
+      result.hunk = Hunks.patch_lines(hunk, fileformat)
+      result.hunk_head = hunk.head
+      insert_hunk_hlmarks(blame_fmt, hunk)
+    end
   end
 
   scheduler()
@@ -1095,6 +1097,7 @@ end
 ---@param target 'all'|'attached'|integer
 ---@return table[]?
 local function buildqflist(target)
+  cache = {}
   target = target or current_buf()
   if target == 0 then
     target = current_buf()
@@ -1120,7 +1123,9 @@ local function buildqflist(target)
       end
     end
 
-    local repo = git.Repo.new(assert(vim.loop.cwd()))
+    local arc = require('gitsigns.arc')
+    local repo = arc.Repo.new(assert(vim.loop.cwd()))
+    -- local repo = git.Repo.new(assert(vim.loop.cwd()))
     if not repos[repo.gitdir] then
       repos[repo.gitdir] = repo
     end

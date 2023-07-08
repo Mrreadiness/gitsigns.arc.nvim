@@ -88,7 +88,13 @@ local function run(func, callback, ...)
     --- @type integer, function
     local nargs, fn = ret[2], ret[3]
 
-    assert(type(fn) == 'function', 'type error :: expected func')
+
+    if type(fn) ~= 'function' then
+      --- @type integer, function
+      nargs, fn = ret[3], ret[2]
+    end
+
+    assert(type(fn) == 'function', 'type error :: expected func ' .. type(fn))
 
     local args = { select(4, unpack(ret)) }
     args[nargs] = step
